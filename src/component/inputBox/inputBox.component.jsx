@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { TasksContext } from "../../context/tasks/tasks.context";
 import { useState } from "react";
+import "../../style/inputbox.css";
 
 const InputBoxComponent = () => {
   const monthNames = [
@@ -69,12 +70,14 @@ const InputBoxComponent = () => {
           }}
           value={task}
           className="form-control"
-          placeholder="Please Enter Your Task"
+          placeholder=" Add Your Task "
         />
 
-        <button className="btn btn-success" type="submit">
-          Add Task{" "}
-        </button>
+        <div id="btncont">
+            <button id="btn" className="btn btn-success" type="submit">
+              Add Task{" "}
+            </button>
+        </div>
       </form>
     </div>
   );

@@ -1,18 +1,17 @@
 import TasksComponent from "./component/Tasks/Tasks.component";
 import "./App.css";
-
+import "./style/app.css";
 
 function App() {
- 
   return (
-    <div style={{"height":"100vh", "display":"flex", "alignContent":"center", "justifyContent":"center"}}>
-      <div style={{"width":"60%", "display":"flex", "flexDirection":"column"}}>
-        <h1 >ToDo List</h1>
-        <TasksComponent />
+    <div id="main">
+      <div id="cont1">
+        <div id="cont2" style={{}}>
+          <TasksComponent />
+        </div>
       </div>
     </div>
   );
 }
 
 export default App;
-
