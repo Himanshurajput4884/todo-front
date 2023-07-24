@@ -1,12 +1,17 @@
 import React, { useRef, useState } from "react";
+import "../../style/taskComponent.css";
+
 const TaskComponent = ({
   note,
   checkHandler,
   deleteHandler,
   updateHandler,
 }) => {
-  const { task, date, year, month, completed } = note;
+  let { task, date, year, month, completed } = note;
 
+  if(task.length > 15){
+    task = task.slice(0, 10) + "...";
+  }
   const [editName, setEditName] = useState(false);
 
   const [updatedName, setUpdatedName] = useState(task);
@@ -31,41 +36,36 @@ const TaskComponent = ({
       ) : (
         <>
           {completed ? (
-            <h2 style={{ textDecoration: "line-through" }}>{task}</h2>
+            <h4 className="taskhead" style={{ textDecoration: "line-through" }}>{task}</h4>
           ) : (
-            <h2>{task}</h2>
+            <h4 className="taskhead">{task}</h4>
           )}
         </>
       )}
-      <div
-        style={{
-          display: "flex",
-          width: "10%",
-          justifyContent: "space-between",
-        }}
+        <div
+        className="btnclass"
       >
-        <i
-          style={{ margin: "10px 10px", cursor: "pointer" }}
+        <button
+          id="btns"
           onClick={() => checkHandler(note)}
         >
           {" "}
           markDone{" "}
-        </i>
-        <i> </i>
-        <i
-          style={{ margin: "10px 10px", cursor: "pointer" }}
+        </button>
+        <button
+          id="btns"
           onClick={() => deleteHandler(note)}
         >
           {" "}
           Delete{" "}
-        </i>
-        <i
-          style={{ margin: "10px 10px", cursor: "pointer" }}
+        </button>
+        <button
+          id="btns"
           onClick={() => setEditName(!editName)}
         >
           {" "}
           Update{" "}
-        </i>
+        </button>
       </div>
     </div>
   );

@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.SingleTask{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    background-color: rgb(176, 226, 200);
+    border: 2px solid rgb(58, 129, 92);
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.SingleTask:hover{
+    background-color: rgb(184, 202, 142);
+    cursor: pointer;
+}
+
+.SingleTask .taskhead{
+    color: red;
+
+}
+
+.SingleTask .btnclass{
+    
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.SingleTask .btnclass button{
+    color: white;
+    background-color: rgb(32, 32, 78);
+    border: 0px solid rgb(10, 10, 58);
+    border-radius: 5px;
+    padding: 2px 8px;
+    margin: 2px 6px;
+}
+
+.SingleTask .btnclass button:hover{
+    background-color: rgb(5, 5, 43);
+}
