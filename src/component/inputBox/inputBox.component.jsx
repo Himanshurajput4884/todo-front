@@ -4,6 +4,8 @@ import { TasksContext } from "../../context/tasks/tasks.context";
 import { useState } from "react";
 import "../../style/inputbox.css";
 
+const URL = `https://todo-b.onrender.com/`;
+
 const InputBoxComponent = () => {
   const monthNames = [
     "January",
@@ -41,7 +43,7 @@ const InputBoxComponent = () => {
       completed,
     };
 
-    const data = await fetch(`http://localhost:5001/create`, {
+    const data = await fetch(`${URL}create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

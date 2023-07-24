@@ -9,6 +9,8 @@ import InputBoxComponent from "../inputBox/inputBox.component";
 import { TasksContext } from "../../context/tasks/tasks.context";
 import TaskComponent from "../Task/Task.component";
 
+const URL = `https://todo-b.onrender.com/`;
+
 const TasksComponent = () => {
   const { notes, setNotes } =
     useContext(TasksContext);
@@ -16,7 +18,7 @@ const TasksComponent = () => {
   const deleteHandler = async (task) => {
     const noteId = task._id;
 
-    const deleteData = await fetch(`http://localhost:5001/${noteId}`, {
+    const deleteData = await fetch(`${URL}${noteId}`, {
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -34,7 +36,7 @@ const TasksComponent = () => {
   const checkHandler = async (task) => {
     const noteId = task._id;
 
-    const checkData = await fetch(`http://localhost:5001/check/${noteId}`, {
+    const checkData = await fetch(`${URL}check/${noteId}`, {
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -51,7 +53,7 @@ const TasksComponent = () => {
   const updateHandler = async (task) =>{
     const taskId = task._id;
     
-    const updateData = await fetch(`http://localhost:5001/${taskId}`, {
+    const updateData = await fetch(`${URL}${taskId}`, {
       method:"POST",
       headers:{
         "Content-Type":"application/json",
@@ -69,7 +71,7 @@ const TasksComponent = () => {
 
   useEffect(() => {
       const getAllTasks = async() =>{
-          const data = await fetch("http://localhost:5001/all", {
+          const data = await fetch(`${URL}all`, {
             method:"GET",
             headers:{
               "Content-Type":"application/json",
